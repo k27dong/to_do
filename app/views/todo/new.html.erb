@@ -1,0 +1,45 @@
+<h4> Adding to-do</h4>
+
+
+<%= form_with scope: :todo, url: todo_index_url,  local: true do |form| %>
+
+<% if @todo.errors.any? %>
+<div id="error_msg">
+  <h2>
+    <%= pluralize(@todo.errors.count, "error")%>
+    prohibited this item from being saved.
+  </h2>
+
+  <%# display error messages one by one%>
+  <ul>
+    <% @todo.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+ 
+
+<p>
+  <%= form.label :title%> <br>
+  <%= form.text_field :title%>
+</p>
+
+<p>
+  <%= form.label :content%><br>
+  <%= form.text_area :content%>
+</p>
+
+<p>
+  <%= form.label :deadline%> <br>
+  <%= form.date_field :deadline%>
+</p>
+
+<p>
+  <%= form.submit %>
+</p>
+
+
+<% end %>
+
+<%= link_to 'Back', root_path%>
