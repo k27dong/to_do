@@ -1,4 +1,18 @@
 <h4> To Do </h4>
 
-<%= link_to '<button type="button">Back</button>'.html_safe, todo_index_url%>
+<p>
+  <strong>Title: </strong> &nbsp;&nbsp;
+  <%= @todo.title%> <br>
+  <strong>Content: </strong> &nbsp;
+  <%= @todo.content%>
+</p>
+  
+<p>
+  <strong>Deadline: </strong> &nbsp;
+  <%= @todo.ddl.strftime("%A, %m/%d, %Y")%>
+</p>
+
+<%= link_to '<button type="button">Back</button>'.html_safe, todo_index_url%> &nbsp;|&nbsp;
+<%= link_to '<button type="button">Edit</button>'.html_safe, todo_index_url%> &nbsp;|&nbsp;
+<%= link_to '<button type="button">Delete</button>'.html_safe, todo_index_url%> <br>
 

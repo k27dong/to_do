@@ -32,14 +32,14 @@
 
 <p>
   <%= form.label :deadline%> <br>
-  <%= form.date_field :deadline%>
+  <%= form.date_field :ddl%>
 </p>
 
 <p>
-  <%= form.submit %>
+  <%= form.submit %> <br><br>
+  <%= link_to '<button type="button">Back</button>'.html_safe, todo_index_url%>
 </p>
 
 
 <% end %>
 
-<%= link_to 'Back', root_path%>
