@@ -1,0 +1,39 @@
+<h4> Sign Up </h4>
+
+<%= form_for(@user, url: signup_path) do |form| %>
+
+<% if @user.errors.any? %>
+<div id="error_msg">
+  <h2>
+    <%= pluralize(@user.errors.count, "error")%>
+    prohibited this item from being saved.
+  </h2>
+
+  <%# display error messages one by one%>
+  <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<%# sign up form%>
+<p>
+<%= form.label :name%> <br>
+<%= form.text_field :name%>
+</p>
+
+<p>
+<%= form.label :email%> <br>
+<%= form.text_field :email%>
+</p>
+
+<p>
+<%= form.label :password%> <br>
+<%= form.password_field :password_digest%>
+</p>
+
+<%= form.submit "Create Account"%>  &nbsp; | &nbsp;
+<%= link_to '<button type="button">Main Page</button>'.html_safe, controller: 'welcome'%>
+<% end %>
