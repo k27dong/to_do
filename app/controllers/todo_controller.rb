@@ -22,9 +22,18 @@ class TodoController < ApplicationController
     end
   end
 
-
+  def edit
+    @todo = Todo.find(params[:id])
+  end
 
   def update
+    @todo = Todo.find(params[:id])
+
+    if @todo.update(todos_params)
+      redirect_to @todo
+    else
+      render 'edit'
+    end
   end
 
   def destroy

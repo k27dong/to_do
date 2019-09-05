@@ -13,6 +13,7 @@
 </p>
 
 <%= link_to '<button type="button">Back</button>'.html_safe, todo_index_url%> &nbsp;|&nbsp;
-<%= link_to '<button type="button">Edit</button>'.html_safe, todo_index_url%> &nbsp;|&nbsp;
-<%= link_to '<button type="button">Delete</button>'.html_safe, todo_index_url%> <br>
-
+<%= link_to '<button type="button">Edit</button>'.html_safe, edit_todo_path%> &nbsp;|&nbsp;
+<%= link_to '<button type="button">Done</button>'.html_safe, todo_path,
+        method: :delete,
+        data: { confirm: 'sure?' }%>

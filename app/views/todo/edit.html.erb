@@ -1,0 +1,43 @@
+<h5>Edit Todo</h5>
+
+<%= form_with model:@todo, local: true do |form| %>
+
+<% if @todo.errors.any? %>
+<div id="error_msg">
+  <h2>
+    <%= pluralize(@todo.errors.count, "error")%>
+    prohibited this item from being saved.
+  </h2>
+
+  <%# display error messages one by one%>
+  <ul>
+    <% @todo.errors.full_messages.each do |msg| %>
+    <li> <%= msg %> </li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+ 
+
+<p>
+  <%= form.label :title%> <br>
+  <%= form.text_field :title%>
+</p>
+
+<p>
+  <%= form.label :content%><br>
+  <%= form.text_area :content%>
+</p>
+
+<p>
+  <%= form.label :deadline%> <br>
+  <%= form.date_field :ddl%>
+</p>
+
+<p>
+  <%= form.submit %> <br><br>
+  <%= link_to '<button type="button">Back</button>'.html_safe, todo_index_url%>
+</p>
+
+
+<% end %>
