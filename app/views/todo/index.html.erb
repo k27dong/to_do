@@ -17,7 +17,7 @@
       <td> <%= todo.ddl.strftime("%m/%d, %Y")%> </td>
       <td> <%= link_to '<button type="button">Show</button>'.html_safe, todo_path(todo) %> </td>
       <td> <%= link_to '<button type="button">Edit</button>'.html_safe, edit_todo_path(todo) %> </td>
-      <td> <%= link_to '<button type="button">Delete</button>'.html_safe, todo_path(todo),
+      <td> <%= link_to '<button type="button">Done</button>'.html_safe, todo_path(todo),
         method: :delete,
         data: { confirm: 'sure?' }%> </td>
       <td> &nbsp; &nbsp; <%= todo.ddl.strftime("%A")%> </td>
