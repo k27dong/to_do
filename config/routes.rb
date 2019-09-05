@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   resources :todo
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+
+  get '/signup',  to: 'users#new'
+  post '/signin', to: 'sessions#new'
+  delete '/signout', to: 'sessions#destroy', via: :delete
 
   root 'welcome#index'
 

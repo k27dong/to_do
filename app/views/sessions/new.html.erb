@@ -1,0 +1,20 @@
+<h4>Sign in</h4>
+
+<%= form_for(:session, url: sessions_path) do |f| %>
+
+<%# sign in layout%>
+<p>
+<%= f.label :email%> <br>
+<%= f.text_field :email%>
+</p>
+
+<p>
+<%= f.label :password%> <br>
+<%= f.password_field :password%>
+</p>
+
+<%= f.submit "Sign In"%> &nbsp; | &nbsp;
+<%= link_to '<button type="button">Main Page</button>'.html_safe, controller: 'welcome'%> <br>
+<% end %>
+
+<p>or you can:  <%= link_to 'Sign Up', signup_path%></p>
