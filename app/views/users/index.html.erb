@@ -1,0 +1,13 @@
+<h4>User</h4>
+
+<p>Total number of user(s):  <%= @users.count%> </p>
+
+<% @users.each do |user| %>
+
+  <%= gravatar_for user, :size => 20%> <br>
+  <%= link_to user.name, user%>
+  <br><br><br>
+<% end %>
+
+<br><br>
+<%= link_to '<button type="button">Main Page</button>'.html_safe, controller: 'welcome'%> <br>
