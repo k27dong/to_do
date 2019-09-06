@@ -2,6 +2,7 @@ class TodoController < ApplicationController
 
   def index # list all items
     @todos = Todo.all
+    @current_user ||= User.find_by_remember_token(cookies[:remember_token])
   end
 
   def new

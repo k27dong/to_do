@@ -2,7 +2,11 @@
 
 <%= link_to 'Enter', controller: 'todo'%> <br> <br>
 
-<%= link_to 'Sign in', new_session_path%> <br>
+<% if signed_in? %>
+  <%= link_to 'Sign Out', signout_path, method: "delete" %> <br>
+<% else %>
+  <%= link_to 'Sign in', new_session_path%> <br>
+<% end %>
 
 <%= link_to 'Sign Up', signup_path%>
 

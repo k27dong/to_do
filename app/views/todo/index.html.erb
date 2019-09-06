@@ -27,8 +27,18 @@
 
 <br>
 <%= link_to '<button type="button">Main Page</button>'.html_safe, controller: 'welcome'%> &nbsp; | &nbsp;
+<% if signed_in? %>
+  <%= link_to '<button type="button">Sign Out</button>'.html_safe, signout_path, method: "delete" %> &nbsp; | &nbsp;
+<% else %>
 <%= link_to '<button type="button">Sign In</button>'.html_safe, new_session_path%> &nbsp; | &nbsp;
-<%= link_to '<button type="button">Sign Up</button>'.html_safe, signup_path%>
+<% end %>
+<%= link_to '<button type="button">Sign Up</button>'.html_safe, signup_path%>  <br><br>
+
+<%# user options%>
+<% if signed_in? %>
+<li><%= link_to '<button type="button">Profile</button>'.html_safe, @current_user%> </li> 
+<li> <%= link_to '<button type="button">Setting</button>'.html_safe, '#'%> </li>
+<% end %>
 
 <br><br>
 
