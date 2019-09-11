@@ -25,4 +25,6 @@ $ sudo rake db:migrate
 $ rails s -p 3000
 ```
 
-
+### Acknowledgement
+Coffee
+[Me](https://dongkefan.me)
